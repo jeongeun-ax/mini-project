@@ -17,24 +17,29 @@ def ask_menu():
             break
         
         print("1 ~ 6 중에서 입력하세요.")
+
+    if ask_menu == 1:
+        show_products()
     
 
-# 판매 상품 목록  
+# 판매 상품 목록
 products_list = [
-    ("이어폰", 5000, 3),
-    ("배터리", 15000, 1),
-    ("텀블러", 50000, 10),
+    ("무선 이어폰", 89000, 3),
+    ("텀블러", 15000, 10),
+    ("보조배터리", 32000, 5),
+    ("마우스패드", 9000, 0),
+    ("USB 허브", 18000, 4)
 ]
 
-# 판매 상품 목록 출력 
+# 상품 목록 출력
 def show_products():
     for i, product in enumerate(products_list, start=1):
-        print(f"{i}. {product[0]}  {product[1]:,}원     (재고{product[2]}개)")
+        print(f"{i}. {product[0]}  {product[1]:,}원  (재고: {product[2]}개)")
 
-
+# 프로그램 실행
 show_title()
 menu = ask_menu()
 
 if menu == 1:
     show_products()
-    
+
